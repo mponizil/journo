@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <title>My Journo Blog</title>
+
+</head>
+<body>
+
+  <ul>
+    <% _.each(posts, function(post) { %>
+    <li>
+      <a href='/<%= postName(post) %>'>
+        <%= manifest[post].title %>
+      </a>
+    </li>
+    <% }); %>
+  </ul>
+
+  <%= title %>
+
+  <%= content %>
+
+</body>
+</html>
