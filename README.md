@@ -153,7 +153,7 @@ loadManifest = ->
     {}
 
   do updateManifest
-  fs.writeFileSync manifestPath, JSON.stringify shared.manifest
+  fs.writeFileSync manifestPath, JSON.stringify shared.manifest, null, 4
 ```
 We update the manifest by looping through every post and every entry in the
 existing manifest, looking for differences in `mtime`, and recording those

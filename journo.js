@@ -105,7 +105,7 @@
     loadConfig();
     shared.manifest = fs.existsSync(manifestPath) ? JSON.parse(fs.readFileSync(manifestPath)) : {};
     updateManifest();
-    return fs.writeFileSync(manifestPath, JSON.stringify(shared.manifest));
+    return fs.writeFileSync(manifestPath, JSON.stringify(shared.manifest, null, 4));
   };
 
   updateManifest = function() {
@@ -243,7 +243,7 @@
   };
 
   Journo.help = Journo['--help'] = function() {
-    return console.log("Usage: journo [command]\n\nIf called without a command, `journo` will preview your blog.\n\ninit      start a new blog in the current folder\nbuild     build a static version of the blog into 'site'\npreview   live preview the blog via a local server\npublish   publish the blog to your remote server");
+    return console.log("Usage: journo [command]\n# \nIf called without a command, `journo` will preview your blog.\n# \ninit      start a new blog in the current folder\nbuild     build a static version of the blog into 'site'\npreview   live preview the blog via a local server\npublish   publish the blog to your remote server");
   };
 
   Journo.version = Journo['--version'] = function() {
